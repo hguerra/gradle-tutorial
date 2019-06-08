@@ -1,0 +1,14 @@
+// Resolving means finding the correct version of the plugin jar and adding that to the classpath of the project.
+// Applying plugins is executing Plugin.apply(T) on the project.
+
+// gradle -q tasks --all
+
+// It doesn’t support Groovy code inside the plugins block
+// plugins block needs to be the top level statement in project’s build scripts (only buildscripts{} block is allowed before it)
+// Plugins DSL cannot be written in scripts plugin, settings.gradle file or in init scripts
+plugins {
+    id "application" // ira adicionar as tasks: compileJava, compileTestJava
+    id "org.shipkit.bintray" version "2.2.5"
+}
+
+apply from: "aplugin.gradle"

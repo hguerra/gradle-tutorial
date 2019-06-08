@@ -1,0 +1,28 @@
+defaultTasks 'helloBaeldung'
+
+task helloBaeldung {
+    doLast {
+        println 'I will be executed second'
+    }
+}
+ 
+helloBaeldung.doFirst {
+    println 'I will be executed first'
+}
+ 
+helloBaeldung.doLast {
+    println 'I will be executed third'
+}
+ 
+helloBaeldung {
+    doLast {
+        println 'I will be executed fourth'
+    }
+}
+
+task ourTask {
+    doLast {
+        ext.theProperty = "Heitor"
+        println ext.theProperty
+    }
+}

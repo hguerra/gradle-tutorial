@@ -1,0 +1,24 @@
+println "At configuration phase."
+ 
+task configured {
+    group = "Gradle Tutorials"
+    description = "https://www.baeldung.com/gradle"
+
+    println "Also at the configuration phase."
+}
+
+task execFirstTest {
+    group = "Gradle Tutorials"
+    description = "https://www.baeldung.com/gradle"
+
+    doLast { println "During the execution phase." }
+}
+ 
+task execSecondTest {
+    group = "Gradle Tutorials"
+    description = "https://www.baeldung.com/gradle"
+
+    doFirst { println "At first during the execution phase." }
+    doLast { println "At last during the execution phase." }
+    println "At configuration phase."
+}
